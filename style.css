@@ -46,12 +46,8 @@ article.post:last-of-type {
 }
 
 
-/* Footer */
-.site-footer {
-	margin-top: 30px;
-	border-top: 2px solid #999;
 
-}
+
 
 /* header Nav Menu */
 
@@ -100,7 +96,45 @@ article.post:last-of-type {
 }
 
 
+/* Main Column */
+
+.main-column {
+	width:66%;
+	float: left;
+
+}
+
+/* Side Column */
+.secondary-column {
+	width:30%;
+	float: right;
+}
+
+
+/* Footer Widget */
+
+.footer-widget-area {
+
+	width:25%;
+	float:left;
+	padding-right:40px;
+	box-sizing: border-box;
+
+}
+
+/* Footer */
+.site-footer {
+	margin-top: 30px;
+	border-top: 2px solid #999;
+
+}
+
+
+
 /* footer  Menu */
+
+
+
 
 .site-footer nav ul li {
 	margin-right:10px;
