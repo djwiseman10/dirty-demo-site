@@ -350,7 +350,21 @@ article.post-gallery h2 {
 }
 
 
+/* Post Columns */
 
+.home-columns {
 
+	padding-top: 30px;
+	
+}
 
+.one-half {
+	width: 45%;
+	float: left;
+	margin-right:10%;
+}
+
+.last {
+	margin-right:0;
+}
 
