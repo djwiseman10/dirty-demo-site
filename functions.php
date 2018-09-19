@@ -66,6 +66,10 @@ function learningWordpress_setup() {
 	add_image_size('small-thumbnail', 180, 120, true);
 	add_image_size('banner-image', 920, 210, true);
 
+
+	// Add Post Formats
+	add_theme_support('post-formats', array('aside','gallery','link'));
+
 }
 
 add_action('after_setup_theme', 'learningWordpress_setup');
