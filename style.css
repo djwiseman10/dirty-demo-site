@@ -3,7 +3,7 @@ Theme Name: LearningWordpress
 Author:LearnWebCode
 Version:1.0
 */
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+/*@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
 
 body {
 
@@ -23,7 +23,7 @@ p {
 }
 
 /* General Layout */
-div.container {
+/*div.container {
 	max-width:930px;
 	margin:0 auto;
 	padding-left:20px; 
@@ -38,12 +38,12 @@ article.post {
 article.post:last-of-type {
 	border-bottom: none;
 
-}
+}*/
 
 /* Header */
-.site-header {
+/*.site-header {
 	border-bottom: 2px solid #999;
-}
+}*/
 
 
 
@@ -51,7 +51,7 @@ article.post:last-of-type {
 
 /* header Nav Menu */
 
-.site-nav ul {
+/*.site-nav ul {
 	margin:0;
 	padding:0;
 
@@ -94,69 +94,69 @@ article.post:last-of-type {
 	border-color:#066ec3;
 	color:#fff;
 }
-
+*/
 
 /* Main Column */
 
-.main-column {
+/*.main-column {
 	width:66%;
 	float: left;
 
-}
+}*/
 
 /* Side Column */
-.secondary-column {
+/*.secondary-column {
 	width:30%;
 	float: right;
 }
-
+*/
 
 /* Footer Widget */
 
-.footer-widget-area {
+/*.footer-widget-area {
 
 	width:25%;
 	float:left;
 	padding-right:40px;
 	box-sizing: border-box;
 
-}
+}*/
 
 /* Footer */
-.site-footer {
+/*.site-footer {
 	margin-top: 30px;
 	border-top: 2px solid #999;
 
 }
-
+*/
 
 
 /* footer  Menu */
 
 
 
-
+/*
 .site-footer nav ul li {
 	margin-right:10px;
 	margin-top:5px;
 	padding-right: 10px;
 	border-right: 1px dotted #bbb;
 
-}
+}*/
 
 /* Page Layout */
-
+/*
 article.page h2 {
 	font-size:300%;
 }
 
 .clearfix:before, .clearfix:after { content: "";display:table; }
 .clearfix:after {clear:both;}
-.clearfix {*zoom:1;}
+.clearfix {*zoom:1;}*/
 
 /* Two Column Title Layout */
 
-div.title-column {
+/*div.title-column {
 	width:30%;
 	float:left;
 
@@ -166,11 +166,11 @@ div.text-column {
 	width:70%;
 	float:right;
 
-}
+}*/
 
 /* Info Box style */
 
-div.info-box {
+/*div.info-box {
 	width:30%;
 	float:right;
 	margin: 0 0 30px 30px;
@@ -186,11 +186,11 @@ div.info-box h4 {
 
 div.info-box p {
 	font-size: 85%;
-}
+}*/
 
 /* Children Links */
 
-.children-links {
+/*.children-links {
 	margin-bottom:20px;
 	margin-top: 20px;
 	font-size: 80%;
@@ -236,10 +236,10 @@ div.info-box p {
 	cursor:default;
 }
 
-
+*/
 
 /* post style */
-
+/*
 .post h2 {
 	margin-bottom:0px;
 
@@ -256,8 +256,8 @@ p.post-info a:visited {
 	color:#999;
 } 
 
-/* Image Styles */
-
+*//* Image Styles */
+/*
 img {
 	max-width: 100%;
 
@@ -273,9 +273,9 @@ img {
 	top:0;
 	left:0;
 }
-
+*/
 /* Search Bar */
-
+/*
 .hd-search {
 	float:right;
 }
@@ -309,9 +309,9 @@ article.post-link {
 	box-shadow: 3px 3px 3px rgba(0,0,0, 0.1);
 	margin:10px 0px;
 }
-
+*/
 /* link post format*/
-
+/*
 article.post-link {
 	padding:0;
 	background-color:#E0EBFF;
@@ -327,11 +327,11 @@ article.post-link a {
 	font-size: 68%;
 	margin:0;
 	color:#777;
-}
+}*/
 
 /* Gallery post format*/
 
-
+/*
 article.post-gallery {
 
 	background-color: #999;
@@ -347,11 +347,11 @@ article.post-gallery img {
 
 article.post-gallery h2 {
 	text-align: center;
-}
+}*/
 
 
 /* Post Columns */
-
+/*
 .home-columns {
 
 	padding-top: 30px;
@@ -365,10 +365,10 @@ article.post-gallery h2 {
 }
 
 .last {
-	margin-right:0;
+	margin-right:0;*/
 }
 
-/* Footer Callout Section */
+/* Footer Callout Section *//*
 
 div.footer-callout {
 
@@ -401,6 +401,179 @@ font-size: .9rem;
 
 
 
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* === Single Movie Page === */
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6{
+    font-family: Helvetica, sans-serif;
+}
+body{
+	font-family: Arial, Helvetica, sans-serif;
+}
+#main .col {
+    float: left;
+}
+#main .column1 {
+    width: 28%;
+    padding-right: 30px;
+	min-height: 1px;
+}
+#main .column2 {
+    width: 72%;
+}
+.banner-section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    padding-top: 440px;
+    padding-bottom: 55px;
+}
+h1.post-title {
+    color: #ffffff;
+    font-size: 34px;
+    padding-bottom: 20px;
+}
+p.genre, 
+p.rating {
+    color: #ffffff;
+    font-size: 16px;
+}
+p.genre > span:after,
+p.genre2 > span:after{
+    content: ', ';
+}
+p.genre2 > span:last-child:after,
+p.genre > span:last-child:after, 
+p.genre > span:nth-last-child(2):after {
+    display: none;
+}
+.body-section {
+    padding: 45px 0;
+}
+.movie-image {
+    min-height: 360px;
+    width: 100%;
+    max-width: 220px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: -330px;
+    margin-bottom: 30px;
+    -webkit-box-shadow: 3px 4px 5px rgba(0,0,0,.75);
+    -moz-box-shadow: 3px 4px 5px rgba(0,0,0,.75);
+    box-shadow: 3px 4px 5px rgba(0,0,0,.75);
+}
+.body-section h2 {
+    font-size: 25px;
+    color: #000000;
+    padding-bottom: 30px;
+}
+.movieinfo p {
+    font-size: 16px;
+    color: #000000;
+}
+.storyline p {
+    font-size: 16px;
+    color: #000000;
+    line-height: 1.4em;
+    margin-bottom: 30px;
+}
+.trailer {
+    margin-bottom: 30px;
+}
+.cast-list .casts {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding-right: 20px;
+}
+.cast-list .casts h3.cast-real-name {
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 20px;
+    color: #0677ea;
+    padding-top: 10px;
+}
+.cast-list .casts p.cast-char-name {
+    color: #000000;
+    font-size: 16px;
+}
+.embed-container { 
+	position: relative; 
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 30px;
+} 
+.embed-container iframe,
+.embed-container object,
+.embed-container embed { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* === Responsive CSS === */
+@media screen and (max-width: 1024px) {
+.cast-list .casts {
+    width: 33.333%;
+    margin-bottom: 30px;
+}
+}
+@media screen and (max-width: 980px) {
+#main .col {
+    float: none;
+    width: 100%;
+    padding-right: 0 !important;
+}
+.movie-image {
+    margin-top: 0;
+    margin: 0 auto 30px;
+}
+.banner-section {
+    padding-top: 200px;
+    padding-bottom: 55px;
+}
+#main .col {
+    text-align: center;
+}
+.movieinfo {
+    margin-bottom: 30px;
+}
+}
+@media screen and (max-width: 568px) {
+.cast-list .casts {
+    width: 50%;
+}
+}
+@media screen and (max-width: 414px) {
+h1.post-title {
+    font-size: 30px;
+}
+.cast-list .casts {
+    width: 100%;
+    padding-right: 0;
+}
+}
 
 
 
