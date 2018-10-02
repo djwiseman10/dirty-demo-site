@@ -602,10 +602,26 @@ h1.post-title {
 }
 }
 
+.body {
+	position: relative;
+	display: block;
+}
 
+.movie-card {
+	width: 30%;
+	padding:0px;
+	margin: 10px;
+	position: relative;
+	float: left;
+	display: block;
+}
 
+.movie-card-title {
+	font-size: 120%;
+}
 
-
-
+.movie-card-info {
+	height:250px;
+}
 
 
