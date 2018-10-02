@@ -52,7 +52,7 @@ if( get_field('movie_budget')) {
 	$number = get_field('movie_budget');
 	// print as international format
 	setlocale(LC_MONETARY, 'en_US.UTF-8');
-	$budget = money_format('%.2n', $number);
+	$budget = number_format($number, 0, '.',',');
 }
 
 //Get Opening Weekend Revenue Field 
@@ -60,7 +60,7 @@ if( get_field('opening_weekend_revenue')) {
 	$number = get_field('opening_weekend_revenue');
 // print as international format
 	setlocale(LC_MONETARY, 'en_US.UTF-8');
-	$opening_weekend = money_format('%.2n', $number);
+	$opening_weekend = number_format($number, 0, '.',',');
 }
 
 
@@ -75,44 +75,47 @@ if( get_field('movie_plot')) {
 
 <?php if (have_posts()) :
 	while (have_posts()) : the_post(); ?>
+
+		
 		<div class="banner-section clearfix" style="background-image: url(<?php echo $featuredimg ?>);">
-			<div class="container-movies">
-				<div class="col column1 clearfix">
-				<div class="col column2 clearfix">
-					<h1 class="post-title"><?php get_the_title(); ?></h1>
-					<div class="post-details">
-						<p class="genre">
-							<?php 
-								foreach( $genres as $genre){
-								echo '<span>' . $genre . '</span>';
-								}
-							?> <span class="duration">| <?php echo $duration . ' mins'; ?></span>
-						</p>
-						<p class="rating">Rating:<?php echo $ratin; ?></p>
+			<div class="banner-overlay clearfix">
+
+				<div class="container">
+					<div class="col column1 clearfix"></div>
+					<div class="col column2 clearfix">
+						<h1 class="post-title"><?php echo get_the_title(); ?></h1>
+						<div class="post-details">
+							<p class="genre">
+								<?php 
+									foreach( $genres as $genre){
+									echo '<span>' . $genre . '</span>';
+									}
+								?> <span class="duration">| <?php echo $duration . ' mins'; ?></span>
+							</p>
+							<p class="rating">Rating: <?php echo $rating; ?></p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="body-section clearfix">
-			<div class="container-movies">
+			<div class="container">
 				<div class="col column1 clearfix">
-					<div class="movie-image" style="background-image: url(<?php echo $movie_picture; ?>);">
-						
-					</div>
+					<div class="movie-image" style="background-image:  url(<?php echo $movie_picture; ?>);"></div>
 					<h2>Movie Info</h2>
 					<div class="movieinfo">
-						<p><strong>Release Date:</strong><?php echo $releaseDate->format('j F Y'); ?> (<?php echo $country; ?>)</p>
+						<p><strong>Release Date:</strong> <?php echo $releaseDate->format('F j, Y'); ?> (<?php echo $country; ?>)</p>
 						<p class="genre2"><strong>Genres:</strong>
 							<?php 
 								foreach ($genres as $genre){
-									echo '<span>' . $genre .'</span>';
+									echo '<span> ' . $genre .'</span>';
 								}	
 							?>
 						</p>
-						<p><strong>Country:</strong><?php echo $country; ?></p>
-						<p><strong>Language:</strong><?php echo $language; ?></p>
-						<p><strong>Budget:</strong><?php echo $budget; ?> (estimated)</p>
-						<p><strong>Opening Weekend:</strong><?php echo $opening_weekend; ?></p>
+						<p><strong>Country:</strong> <?php echo $country; ?></p>
+						<p><strong>Language:</strong> <?php echo $language; ?></p>
+						<p><strong>Budget:</strong> &#36;<?php echo $budget; ?> (estimated)</p>
+						<p><strong>Opening Weekend:</strong> &#36;<?php echo $opening_weekend; ?></p>
 					</div>
 				</div>
 				<div class="col column2 clearfix">
@@ -124,15 +127,22 @@ if( get_field('movie_plot')) {
 						<h2>Trailer</h2>
 						<div class="video-frames">
 							<?php // get trailer fields 
-								if(have_rows('trailers')){
-									while(have_rows('trailers')):the_row();
-										// Subfields
-										if(get_sub_field('trailer_url')){
-											$trailer_url = get_sub_field('trailer_url');
-											echo 'div class="embed-container"><iframe width="560" height="315" src="'. $trailer_url . '" frameborder="0" allowfullscreen></iframe></div>';
-										}
-									endwhile;	
-								}
+								if(have_rows('movie_trailers')) : ?>
+
+									<div class="embed-container">
+										<?php 
+											while(have_rows('movie_trailers')): the_row();
+												// Subfields
+												if(get_sub_field('trailer_link')){
+													$trailer_url = get_sub_field('trailer_link');
+													echo '<iframe width="560" height="315" src="'. $trailer_url .'" frameborder="0" allowfullscreen></iframe>';
+												}
+											endwhile;	
+										?>
+
+									</div>
+
+								<?php endif; 
 							?>
 						</div>
 					</div>
@@ -140,20 +150,20 @@ if( get_field('movie_plot')) {
 						<h2>Cast</h2>
 						<div class="cast-list clearfix">
 							<?php // get cast fields
-								if(have_rows('cast_members')){
-									while(have_rows('cast_members')): the_row();
+								if(have_rows('cast_info')){
+									while(have_rows('cast_info')): the_row();
 									//Subfields 
 										if(get_sub_field('cast_member_image')){
 											$cast_member_image = get_sub_field('cast_member_image');
 										}
-										if(get_sub_field('cast_member_real_name')){
-											$cast_member_real_name = get_sub_field('cast_member_real_name');
+										if(get_sub_field('cast_info_real_name')){
+											$cast_member_real_name = get_sub_field('cast_info_real_name');
 										}
-										if(get_sub_field('cast_member_movie_name')){
-											$cast_member_movie_name = get_sub_field('cast_member_movie_name');
+										if(get_sub_field('cast_info_movie_name')){
+											$cast_member_movie_name = get_sub_field('cast_info_movie_name');
 										}
 										echo '<div class="casts">';
-										echo 'img src="' . $cast_member_image . '" alt="">';
+										echo '<img height="220" src="' . $cast_member_image . '" alt="">';
 										echo '<h3 class="cast-real-name">' . $cast_member_real_name . '</h3>';
 										echo '<p class="cast-char-name"> as <strong>' . $cast_member_movie_name . '</strong></p>';
 										echo '</div>';
