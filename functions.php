@@ -141,9 +141,25 @@ function learningWordpress_customize_register( $wp_customize) {
 
 	));
 
+
+
 	$wp_customize->add_setting('lwp_btn_color', array(
 
 		'default' => '#006ec3',
+		'transport' => 'refresh',
+
+	));
+
+	$wp_customize->add_setting('lwp_see_all_btn_color', array(
+
+		'default' => '#006ec3',
+		'transport' => 'refresh',
+
+	));
+
+	$wp_customize->add_setting('lwp_see_all_btn_text_color', array(
+
+		'default' => '#FFF',
 		'transport' => 'refresh',
 
 	));
@@ -159,10 +175,23 @@ function learningWordpress_customize_register( $wp_customize) {
 		'settings' => 'lwp_link_color',
 	)));
 
+
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_btn_color_control', array(
 		'label' => __('Button Color', 'LearningWordPress'),
 		'section' => 'lwp_standard_colors',
 		'settings' => 'lwp_btn_color',
+	)));
+
+		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_see_all_btn_color', array(
+		'label' => __('See All Button Color', 'LearningWordPress'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_see_all_btn_color',
+	)));
+
+				$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'lwp_see_all_btn_text_color', array(
+		'label' => __('See All Button Color', 'LearningWordPress'),
+		'section' => 'lwp_standard_colors',
+		'settings' => 'lwp_see_all_btn_text_color',
 	)));
 }
 
@@ -192,6 +221,25 @@ function learningWordpress_customize_css() { ?>
 			background-color: <?php echo get_theme_mod('lwp_btn_color'); ?>;
 		}
 
+		.button {
+			background: <?php echo get_theme_mod('lwp_see_all_btn_color'); ?>;
+		}
+
+		a.see-all-btn:link,
+		a.see-all-btn:visited {
+			color:<?php echo get_theme_mod('lwp_see_all_btn_text_color'); ?>!important;
+
+		}
+
+		.movie-card-link { 
+			background: <?php echo get_theme_mod('lwp_see_all_btn_color'); ?>;
+
+		}
+
+		.movie-card-link a:link, 
+		.movie-card-link a:visited {
+			color:<?php echo get_theme_mod('lwp_see_all_btn_text_color'); ?>!important; 
+		}
 
 
 	</style>

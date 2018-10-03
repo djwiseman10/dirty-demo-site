@@ -602,26 +602,128 @@ h1.post-title {
 }
 }
 
-.body {
-	position: relative;
+
+.movies-section {
+	width: 100%;
 	display: block;
+	position: relative;
+	height:auto;
+	border-top: 2px solid #999;
+}
+.main {
+	width: 100%;
+	display: block;
+	height:auto;
+}
+.movie-posts {
+	width: 100%;
+	margin-bottom: 10px;
 }
 
-.movie-card {
+.button {
+	margin:auto;
+	width:20%;
+	display: block;
+    position: relative;
+    background:#006ec3;
+    text-align: center;
+    padding:10px;
+    border-radius: 5px;
+box-shadow: 4px 4px 10px rgba(0,0,0,0.25);
+	
+
+}
+
+a.see-all-btn {
+	
+	font-size: 100%;
+	color:#fff;
+	text-decoration: none;
+
+}
+
+a.see-all-btn:visited {
+	color:#fff;
+	text-decoration: none;
+}
+
+.movie-card {	
+	box-shadow: 2px 2px 8px 4px rgba(0,0,0,0.1);
 	width: 30%;
 	padding:0px;
-	margin: 10px;
-	position: relative;
+	margin-right: 5%;
+	margin-bottom:20px;
 	float: left;
 	display: block;
+	border-radius: 5px;
+
+}
+.movie-card:last-of-type  {
+	margin-right: 0px;
 }
 
+.movie-card-thumbnail {
+background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    height:260px;
+    display: block;
+
+}
+
+
+.movie-card-text {
+display: block;
+position: relative;
+	width: 100%;
+	background-color: #F8F8F8;
+	border-bottom-left-radius:5px;
+	border-bottom-right-radius:5px;
+
+}
+
+
+
+
 .movie-card-title {
-	font-size: 120%;
+	    font-size: 110%;
+    text-align: center;
+    background: rgba(0,0,0, 0.45);
+    width: 100%;
+    color: #fff;
+    float: left;
+    position: absolute;
+    top: -57px;
+    letter-spacing: 1px;
 }
 
 .movie-card-info {
-	height:250px;
+	text-align: left;
+	padding:0px 20px;
+	width: 50%;
+	float: left;
+
+}
+.movie-card-link {
+	width: 30%;
+	float: right;
+	    width: 30%;
+    margin: 44px 25px 44px 0px;
+    float: right;
+    background: #ccc;
+    text-align: center;
+    padding: 10px 0px;
+    border-radius: 5px;
+
+}
+.movie-card-link a {
+ text-decoration: none!important;
+}
+
+.title {
+	font-size:150%;	
+	text-align: center;
 }
 
 

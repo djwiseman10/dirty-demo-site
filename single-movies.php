@@ -87,6 +87,15 @@ if( get_field('movie_plot')) {
 						<div class="post-details">
 							<p class="genre">
 								<?php 
+
+									$values = get_field('movie_genre');
+										if( count($values)){
+    										foreach($values as $k=>$value){
+        										if($k) echo ', ';
+        										echo $value;
+   											}
+									}
+
 									foreach( $genres as $genre){
 									echo '<span>' . $genre . '</span>';
 									}
